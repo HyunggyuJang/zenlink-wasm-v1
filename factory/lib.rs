@@ -5,9 +5,7 @@ use ink_lang as ink;
 #[ink::contract]
 mod factory {
     #[cfg(not(feature = "ink-as-dependency"))]
-    use ink_storage::{
-        collections::HashMap as StorageHashMap,
-    };
+    use ink_storage::collections::HashMap as StorageHashMap;
 
     use exchange::Exchange;
 

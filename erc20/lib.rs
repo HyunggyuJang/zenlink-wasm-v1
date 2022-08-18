@@ -59,7 +59,7 @@ pub mod erc20 {
         }
 
         #[ink(message, payable)]
-        pub fn balance(&self)->Balance{
+        pub fn balance(&self) -> Balance{
             self.env().transferred_balance()
             //self.env().balance()
         }
@@ -79,8 +79,8 @@ pub mod erc20 {
             let owner = self.env().caller();
             self.allowances.insert((owner, spender), value);
             self.env().emit_event(Approval{
-                owner: owner,
-                spender: spender,
+                owner,
+                spender,
                 value
             });
 
